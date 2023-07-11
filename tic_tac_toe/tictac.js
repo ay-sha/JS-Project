@@ -1,16 +1,20 @@
-let c=1; 
+
+let c=0; 
 const boxes = document.getElementById('parentDiv').childNodes
+const res = document.getElementById("ans");
 
 for(let i=0; i<boxes.length; i++){
     
     if(boxes[i].nodeName=="#text") boxes[i].remove()
 
 }
-// console.log(boxes)
-
-boxes.forEach(function (box){
+function start ()
+{
+    boxes.forEach(function (box){
     box.addEventListener('click', handleClick);
 }); 
+
+}
 
   function handleClick(event) {
     let position= Array.from(event.target.parentNode.childNodes).indexOf(this); 
@@ -123,7 +127,7 @@ boxes.forEach(function (box){
 
     if(c==9 || ans!="DRAW")
     {
-        const res = document.getElementById("ans").innerHTML= ans; 
+        res.innerHTML= ans; 
         boxes.forEach(box => {
             box.removeEventListener('click',handleClick); 
         })
@@ -138,11 +142,13 @@ boxes.forEach(function (box){
         if(boxes[i].childElementCount > 0) 
         {
             boxes[i].childNodes[0].remove();
+
         }
     
     }
-
+    res.innerHTML=" " 
     c=0; 
+    start();
 
   }
 
