@@ -6,7 +6,7 @@ for(let i=0; i<boxes.length; i++){
     if(boxes[i].nodeName=="#text") boxes[i].remove()
 
 }
-console.log(boxes)
+// console.log(boxes)
 
 boxes.forEach(function (box){
     box.addEventListener('click', handleClick);
@@ -14,8 +14,8 @@ boxes.forEach(function (box){
 
   function handleClick(event) {
     let position= Array.from(event.target.parentNode.childNodes).indexOf(this); 
-    console.log('box clicked', event.target);
-    console.log('Div number:', position);
+    // console.log('box clicked', event.target);
+    // console.log('Div number:', position);
     const h1Box = document.createElement("h1");
     let node; 
 
@@ -40,10 +40,10 @@ boxes.forEach(function (box){
   {
     let ans = "DRAW"
     let row=Math.floor(position/3)*3
-    console.log(row); 
+    // console.log(row); 
 
     let col = position%3
-    console.log(col)
+    // console.log(col)
 
     if(boxes[row].childElementCount===1 && boxes[row+1].childElementCount===1 && boxes[row+2].childElementCount===1)
     {
@@ -129,6 +129,21 @@ boxes.forEach(function (box){
         })
     }
     
+  }
+
+  function reloadgame ()
+  {
+    for(let i=0; i<boxes.length; i++){
+    
+        if(boxes[i].childElementCount > 0) 
+        {
+            boxes[i].childNodes[0].remove();
+        }
+    
+    }
+
+    c=0; 
+
   }
 
 

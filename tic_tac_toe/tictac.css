@@ -7,18 +7,40 @@ margin: 20px 90px;
 }
 
 #parentDiv{
+    position: fixed;
+    left: 35%;
     margin-top: 20px;
-    height: 490px;
-    width: 490px;
+    height: 350px;
+    width: 350px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    border: 1px solid rgb(166, 166, 255);
+    border: 1px solid rgb(19, 19, 77);
+    margin-bottom: 100px;
 }
 
 #parentDiv > div{
-    height: 160px;
-    width: 160px;
+    height: 110px;
+    width: 110px;
     background-color: rgb(147, 195, 242);
     margin: 1px;
 }
+
+#ans {
+    position: fixed;
+    bottom: 130px; 
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #reloadGame {
+    position: fixed;
+    bottom: 50px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
